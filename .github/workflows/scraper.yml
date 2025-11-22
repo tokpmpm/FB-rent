@@ -1,8 +1,7 @@
 name: Run Rental Scraper
 
 on:
-  schedule:
-    - cron: '0 */3 * * *' # Every 3 hours
+
   workflow_dispatch: # Allow manual trigger
 
 jobs:

@@ -3,25 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Warm Latte Theme */
+  --background: 40 33% 98%;
+  /* #FFFDF5 */
+  --foreground: 22 19% 24%;
+  /* #4A3B32 */
+
+  --card: 0 0% 100%;
+  --card-foreground: 22 19% 24%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 22 19% 24%;
+
+  --primary: 18 20% 46%;
+  /* #8C6B5D */
+  --primary-foreground: 40 33% 98%;
+
+  --secondary: 28 25% 86%;
+  /* #E6DCD3 */
+  --secondary-foreground: 22 19% 24%;
+
+  --muted: 36 10% 61%;
+  /* #A89F91 */
+  --muted-foreground: 22 19% 40%;
+
+  --accent: 28 25% 86%;
+  --accent-foreground: 22 19% 24%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 28 25% 86%;
+  --input: 28 25% 86%;
+  --ring: 18 20% 46%;
+
+  --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.dark {
+  --background: 22 19% 15%;
+  --foreground: 40 33% 98%;
+
+  --card: 22 19% 20%;
+  --card-foreground: 40 33% 98%;
+
+  --popover: 22 19% 20%;
+  --popover-foreground: 40 33% 98%;
+
+  --primary: 18 20% 46%;
+  --primary-foreground: 40 33% 98%;
+
+  --secondary: 22 19% 25%;
+  --secondary-foreground: 40 33% 98%;
+
+  --muted: 22 19% 30%;
+  --muted-foreground: 40 33% 70%;
+
+  --accent: 22 19% 25%;
+  --accent-foreground: 40 33% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 40 33% 98%;
+
+  --border: 22 19% 25%;
+  --input: 22 19% 25%;
+  --ring: 18 20% 46%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
 }

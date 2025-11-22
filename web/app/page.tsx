@@ -1,7 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import Dashboard from "@/components/Dashboard";
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 0; // Always revalidate
 
 export default async function Home() {
     const { data: posts } = await supabase

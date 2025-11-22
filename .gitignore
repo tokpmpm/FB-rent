@@ -9,8 +9,8 @@ venv/
 .venv/
 ENV/
 
-# Scraper (暫時不上傳)
-scraper/
+# Scraper
+# scraper/ (Uncommented to allow upload)
 
 # Environment variables
 .env
