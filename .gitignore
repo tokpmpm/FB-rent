@@ -10,7 +10,7 @@ venv/
 ENV/
 
 # Scraper
-# scraper/ (Uncommented to allow upload)
+scraper/
 
 # Environment variables
 .env
