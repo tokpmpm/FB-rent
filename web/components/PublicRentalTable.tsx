@@ -1,3 +1,5 @@
+"use client";
+
 import { RentalPost } from "@/types";
 import {
     Table,
@@ -9,11 +11,12 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 
-interface RentalTableProps {
+interface PublicRentalTableProps {
     posts: RentalPost[];
+    onViewPost: (url: string) => void;
 }
 
-export function RentalTable({ posts }: RentalTableProps) {
+export default function PublicRentalTable({ posts, onViewPost }: PublicRentalTableProps) {
     if (posts.length === 0) {
         return <div className="text-center p-8 text-gray-500">No posts found.</div>;
     }
@@ -53,10 +56,13 @@ export function RentalTable({ posts }: RentalTableProps) {
                             </div>
                         </div>
 
-                        <Button asChild className="w-full" variant="outline">
-                            <a href={post.post_link} target="_blank" rel="noopener noreferrer">
-                                查看貼文
-                            </a>
+                        <Button
+                            asChild={false}
+                            className="w-full"
+                            variant="outline"
+                            onClick={() => onViewPost(post.post_link)}
+                        >
+                            查看貼文
                         </Button>
                     </div>
                 ))}
@@ -92,10 +98,13 @@ export function RentalTable({ posts }: RentalTableProps) {
                                 <TableCell>{post.move_in_date}</TableCell>
                                 <TableCell>{post.pet}</TableCell>
                                 <TableCell className="text-right">
-                                    <Button asChild size="sm" variant="outline">
-                                        <a href={post.post_link} target="_blank" rel="noopener noreferrer">
-                                            View
-                                        </a>
+                                    <Button
+                                        asChild={false}
+                                        size="sm"
+                                        variant="outline"
+                                        onClick={() => onViewPost(post.post_link)}
+                                    >
+                                        View
                                     </Button>
                                 </TableCell>
                             </TableRow>
