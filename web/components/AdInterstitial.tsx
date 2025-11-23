@@ -61,7 +61,7 @@ export function AdInterstitial({ isOpen, onClose, targetUrl }: AdInterstitialPro
                             <ins className="adsbygoogle"
                                 style={{ display: 'block' }}
                                 data-ad-client="ca-pub-9747455231872729"
-                                data-ad-slot="YOUR_AD_SLOT_ID"
+                                data-ad-slot="4704353723"
                                 data-ad-format="auto"
                                 data-full-width-responsive="true"></ins>
                         </div>
