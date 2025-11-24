@@ -18,6 +18,14 @@ export function AdInterstitial({ isOpen, onClose, targetUrl }: AdInterstitialPro
             setCanClose(false);
             setCountdown(5);
 
+            // Trigger AdSense to load the ad
+            try {
+                (window as any).adsbygoogle = (window as any).adsbygoogle || [];
+                (window as any).adsbygoogle.push({});
+            } catch (err) {
+                console.error("AdSense error:", err);
+            }
+
             // Countdown timer
             const interval = setInterval(() => {
                 setCountdown((prev) => {
